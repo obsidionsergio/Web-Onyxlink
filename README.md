@@ -11,11 +11,19 @@ Sitio **100% estático**. Sin build, sin dependencias. Se despliega en Vercel ta
 
 ```
 index.html      Todo el contenido y las secciones
-styles.css      Sistema de diseño (bento, glass, glows, responsive)
-script.js       Scroll reveal, glow que sigue al cursor, count-up, nav sticky, tabla de límites
+styles.css      Sistema de diseño (bento, glass, glows, gráficas, responsive)
+script.js       Scroll reveal, glow al cursor, marquesina del banner, count-up, nav sticky
+fonts/          Hikasami Sans (.woff2) + OFL.txt
+imagenes/       Imágenes del sitio. logo.svg = logo del menú (reemplázalo por el real)
 favicon.svg
 vercel.json     Clean URLs + cabeceras de seguridad + cache de assets
 ```
+
+## Logo
+
+El logo del menú es `imagenes/logo.svg`. Sustitúyelo por el archivo real
+(mismo nombre) o pon otro formato en `imagenes/` y cambia el `src` del
+`<img class="nav__logo">` en `index.html`. Arte claro/blanco, fondo transparente.
 
 ## Antes de publicar — conecta los CTA
 

@@ -18,6 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="preload" href="fonts/Hikasami-VF.woff2" as="font" type="font/woff2" crossorigin />
 
 <link rel="stylesheet" href="styles.css" />
 <script>document.documentElement.classList.add('js')</script>
@@ -30,6 +31,11 @@
     <span class="orb orb--1"></span>
     <span class="orb orb--2"></span>
     <span class="orb orb--3"></span>
+  </div>
+  <div class="bg__waves">
+    <span class="w w1"></span>
+    <span class="w w2"></span>
+    <span class="w w3"></span>
   </div>
   <div class="bg__grain"></div>
   <div class="bg__vignette"></div>
@@ -44,17 +50,51 @@
       </feTurbulence>
       <feDisplacementMap in="SourceGraphic" in2="noise" scale="55" xChannelSelector="R" yChannelSelector="G" />
     </filter>
+    <filter id="liquidSoft" x="-25%" y="-25%" width="150%" height="150%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.006 0.010" numOctaves="2" seed="4" result="n">
+        <animate class="liquid-anim" attributeName="baseFrequency" dur="19s"
+          values="0.006 0.010; 0.011 0.006; 0.005 0.013; 0.006 0.010" repeatCount="indefinite" />
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="34" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+    <linearGradient id="chartGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
   </defs>
 </svg>
 
+<!-- ===== Promo bar ===== -->
+<div class="promo" role="region" aria-label="Promoción">
+  <div class="promo__viewport">
+  <div class="promo__track" aria-hidden="true">
+    <span class="promo__group">
+      <b>Precio de fundador</b><i>·</i> Usa el código <code>ONYX20</code><i>·</i> −20&#8239;% los 3 primeros meses <i>·</i> plazas limitadas <i>·</i>
+      <b>Precio de fundador</b><i>·</i> Usa el código <code>ONYX20</code><i>·</i> −20&#8239;% los 3 primeros meses <i>·</i> plazas limitadas <i>·</i>
+      <b>Precio de fundador</b><i>·</i> Usa el código <code>ONYX20</code><i>·</i> −20&#8239;% los 3 primeros meses <i>·</i> plazas limitadas <i>·</i>
+    </span>
+    <span class="promo__group">
+      <b>Precio de fundador</b><i>·</i> Usa el código <code>ONYX20</code><i>·</i> −20&#8239;% los 3 primeros meses <i>·</i> plazas limitadas <i>·</i>
+      <b>Precio de fundador</b><i>·</i> Usa el código <code>ONYX20</code><i>·</i> −20&#8239;% los 3 primeros meses <i>·</i> plazas limitadas <i>·</i>
+      <b>Precio de fundador</b><i>·</i> Usa el código <code>ONYX20</code><i>·</i> −20&#8239;% los 3 primeros meses <i>·</i> plazas limitadas <i>·</i>
+    </span>
+  </div>
+  </div>
+</div>
+
 <!-- ===== Sticky nav ===== -->
 <header class="nav" id="nav">
-  <a href="#top" class="nav__brand">
-    <span class="nav__dot"></span> ONYXLINK
+  <a href="#top" class="nav__brand" aria-label="ONYXLINK — inicio">
+    <img class="nav__logo" src="imagenes/logooooo.png" alt="ONYXLINK" width="130" height="26" />
   </a>
   <nav class="nav__links">
     <a href="#modulos">Producto</a>
     <a href="#ahorro">Lo que ahorras</a>
+    <a href="#resultados">Resultados</a>
     <a href="#planes">Planes</a>
     <a href="#faq">FAQ</a>
   </nav>
@@ -65,11 +105,13 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero">
+    <div class="hero__portrait" aria-hidden="true">
+      <img src="imagenes/chica.png" alt="" width="1523" height="1033" />
+    </div>
     <div class="wrap">
       <p class="eyebrow" data-reveal>ONYXLINK · Sistema operativo con IA para tu negocio</p>
       <h1 class="hero__title" data-reveal>
-        Tu negocio entero en una pantalla.<br />
-        Y una IA que no lo ordena: <span class="grad">lo trabaja</span>.
+        Tu negocio entero en una pantalla. Y una IA que no lo ordena: <span class="grad">lo trabaja</span>.
       </h1>
       <p class="hero__sub" data-reveal>
         ONYXLINK sustituye las 8 herramientas que hoy pagas sueltas —CRM, agenda, chat, web,
@@ -127,22 +169,41 @@
       </p>
 
       <div class="bento" id="bento">
-        <article class="cell cell--xl glass" data-reveal>
+        <article class="cell cell--xl cell--chart glass" data-reveal>
           <div class="cell__glow"></div>
           <span class="cell__icon">
             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="13" y="10" width="8" height="11" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/></svg>
           </span>
           <h3>Dashboard central</h3>
           <p>Todo tu negocio, en una pantalla. Ingresos, conversaciones, tareas y equipo sin cambiar de pestaña.</p>
+          <span class="chart">
+            <svg class="chart__svg" viewBox="0 0 240 64" preserveAspectRatio="none" aria-hidden="true">
+              <line class="grid" x1="0" y1="16" x2="240" y2="16"/>
+              <line class="grid" x1="0" y1="40" x2="240" y2="40"/>
+              <g class="spark">
+                <path class="spark__area" d="M-20 36 C 10 14,30 14,60 36 C 90 58,110 58,140 36 C 170 14,190 14,220 36 C 250 58,270 58,300 36 C 330 14,350 14,380 36 C 410 58,430 58,460 36 L460 64 L-20 64 Z"/>
+                <path class="spark__line" d="M-20 36 C 10 14,30 14,60 36 C 90 58,110 58,140 36 C 170 14,190 14,220 36 C 250 58,270 58,300 36 C 330 14,350 14,380 36 C 410 58,430 58,460 36"/>
+              </g>
+              <line class="axis" x1="0" y1="63" x2="240" y2="63"/>
+            </svg>
+          </span>
         </article>
 
-        <article class="cell cell--tall glass" data-reveal>
+        <article class="cell cell--tall cell--chart glass" data-reveal>
           <div class="cell__glow"></div>
           <span class="cell__icon">
             <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/><path d="M12 2v2M20 6l-1.5 1.5M4 6l1.5 1.5"/></svg>
           </span>
           <h3>Clon de IA</h3>
           <p>Atiende y vende 24/7. Entrenado con tu forma de vender: responde en tu tono y cierra citas mientras duermes.</p>
+          <span class="chart chart--pulse">
+            <svg class="chart__svg" viewBox="0 0 64 64" aria-hidden="true">
+              <circle class="pulse p1" cx="32" cy="32" r="7"/>
+              <circle class="pulse p2" cx="32" cy="32" r="7"/>
+              <circle class="pulse p3" cx="32" cy="32" r="7"/>
+              <circle class="pulse-core" cx="32" cy="32" r="5.5"/>
+            </svg>
+          </span>
         </article>
 
         <article class="cell glass" data-reveal>
@@ -190,13 +251,28 @@
           <p>Planifica en tiempo real. Mapas, diagramas y lluvias de ideas con tu equipo.</p>
         </article>
 
-        <article class="cell cell--wide glass" data-reveal>
+        <article class="cell cell--wide cell--chart glass" data-reveal>
           <div class="cell__glow"></div>
           <span class="cell__icon">
             <svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 16v-4M12 16V8M16 16v-6"/></svg>
           </span>
           <h3>CRM y oportunidades</h3>
           <p>Pipeline y contactos al día. El clon actualiza el estado de cada trato sin que toques nada.</p>
+          <span class="chart">
+            <svg class="chart__svg" viewBox="0 0 240 64" preserveAspectRatio="none" aria-hidden="true">
+              <line class="grid" x1="0" y1="22" x2="240" y2="22"/>
+              <g class="bars">
+                <rect x="4" y="10" width="26" height="50" rx="3"/>
+                <rect x="38" y="16" width="26" height="44" rx="3"/>
+                <rect x="72" y="24" width="26" height="36" rx="3"/>
+                <rect x="106" y="12" width="26" height="48" rx="3"/>
+                <rect x="140" y="26" width="26" height="34" rx="3"/>
+                <rect x="174" y="18" width="26" height="42" rx="3"/>
+                <rect x="208" y="30" width="26" height="30" rx="3"/>
+              </g>
+              <line class="axis" x1="0" y1="61" x2="240" y2="61"/>
+            </svg>
+          </span>
         </article>
 
         <article class="cell glass" data-reveal>
@@ -271,6 +347,80 @@
     </div>
   </section>
 
+  <!-- ===== RESULTS ===== -->
+  <section class="section" id="resultados">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Lo que cambia</p>
+      <h2 class="section__title" data-reveal>Menos gasto, menos fricción, más foco.</h2>
+      <p class="section__lead" data-reveal>Tres números que se notan desde la primera semana.</p>
+
+      <div class="grid3">
+        <article class="cell cell--chart glass" data-reveal>
+          <div class="cell__glow"></div>
+          <span class="cell__icon">
+            <svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
+          </span>
+          <p class="cell__stat">−684 €<span>/mes</span></p>
+          <p class="cell__statlabel">Lo que dejas de pagar al mover 8 apps sueltas a ONYXLINK Pro.</p>
+          <span class="chart chart--hbar">
+            <svg class="chart__svg" viewBox="0 0 240 28" preserveAspectRatio="none" aria-hidden="true">
+              <rect class="hbar__track" x="0" y="8" width="240" height="12" rx="4"/>
+              <rect class="hbar__fill" x="0" y="8" width="240" height="12" rx="4"/>
+            </svg>
+          </span>
+        </article>
+
+        <article class="cell cell--chart glass" data-reveal>
+          <div class="cell__glow"></div>
+          <span class="cell__icon">
+            <svg viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg>
+          </span>
+          <p class="cell__stat">×5<span> automatizaciones</span></p>
+          <p class="cell__statlabel">Frente al plan de entrada. El trabajo repetitivo deja de quedarse en «pendiente».</p>
+          <span class="chart">
+            <svg class="chart__svg" viewBox="0 0 240 64" preserveAspectRatio="none" aria-hidden="true">
+              <line class="grid" x1="0" y1="20" x2="240" y2="20"/>
+              <line class="grid" x1="0" y1="42" x2="240" y2="42"/>
+              <path class="step__area" d="M6 56 H44 V48 H82 V38 H120 V28 H158 V19 H196 V11 H236 V11 L236 62 L6 62 Z"/>
+              <path class="step__line" d="M6 56 H44 V48 H82 V38 H120 V28 H158 V19 H196 V11 H236"/>
+              <circle class="step__dot" cx="236" cy="11" r="3.4"/>
+              <line class="axis" x1="0" y1="62" x2="240" y2="62"/>
+            </svg>
+          </span>
+        </article>
+
+        <article class="cell cell--chart glass" data-reveal>
+          <div class="cell__glow"></div>
+          <span class="cell__icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M9 21h6M12 17v4"/></svg>
+          </span>
+          <p class="cell__stat">14 → 1</p>
+          <p class="cell__statlabel">Una sola pantalla para llevar el negocio, en vez de catorce pestañas abiertas.</p>
+          <span class="chart chart--gauge">
+            <svg class="chart__svg" viewBox="0 0 72 72" aria-hidden="true">
+              <g class="gauge__ticks">
+                <line x1="36" y1="4" x2="36" y2="9" transform="rotate(0 36 36)"/>
+                <line x1="36" y1="4" x2="36" y2="9" transform="rotate(30 36 36)"/>
+                <line x1="36" y1="4" x2="36" y2="9" transform="rotate(60 36 36)"/>
+                <line x1="36" y1="4" x2="36" y2="9" transform="rotate(90 36 36)"/>
+                <line x1="36" y1="4" x2="36" y2="9" transform="rotate(120 36 36)"/>
+                <line x1="36" y1="4" x2="36" y2="9" transform="rotate(150 36 36)"/>
+                <line x1="36" y1="4" x2="36" y2="9" transform="rotate(180 36 36)"/>
+                <line x1="36" y1="4" x2="36" y2="9" transform="rotate(210 36 36)"/>
+                <line x1="36" y1="4" x2="36" y2="9" transform="rotate(240 36 36)"/>
+                <line x1="36" y1="4" x2="36" y2="9" transform="rotate(270 36 36)"/>
+                <line x1="36" y1="4" x2="36" y2="9" transform="rotate(300 36 36)"/>
+                <line x1="36" y1="4" x2="36" y2="9" transform="rotate(330 36 36)"/>
+              </g>
+              <circle class="gauge__track" cx="36" cy="36" r="26"/>
+              <circle class="gauge__arc" cx="36" cy="36" r="26" transform="rotate(-90 36 36)"/>
+            </svg>
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== PLANS ===== -->
   <section class="section" id="planes">
     <div class="wrap">
@@ -284,6 +434,7 @@
           <p class="plan__price"><b>79 €</b><span>/mes</span></p>
           <p class="plan__for">Para arrancar y quitarte de encima las primeras cinco herramientas sueltas.</p>
           <a href="#empezar" class="btn btn--block" data-cta="plan-starter">Empezar gratis</a>
+          <p class="plan__note">Incluye:</p>
           <ul class="plan__list">
             <li>Dashboard, CRM, agenda, pizarra, proyectos y chat de equipo</li>
             <li>Clon de IA y voz IA con cuota mensual</li>
@@ -398,7 +549,7 @@
 
   <!-- ===== FAQ ===== -->
   <section class="section" id="faq">
-    <div class="wrap wrap--narrow">
+    <div class="wrap">
       <p class="eyebrow" data-reveal>Antes de que preguntes</p>
       <h2 class="section__title" data-reveal>Lo que la gente quiere saber.</h2>
 
@@ -433,7 +584,7 @@
 
   <!-- ===== FINAL CTA ===== -->
   <section class="section final" id="empezar">
-    <div class="wrap wrap--narrow" data-reveal>
+    <div class="wrap" data-reveal>
       <h2 class="final__title">Deja de administrar tu negocio.<br />Empieza a moverlo.</h2>
       <p class="final__sub">14 días gratis. Sin tarjeta. Y una garantía que pone el dinero de nuestro lado.</p>
       <a href="#empezar" class="btn btn--lg btn--solid" data-cta="final">Empezar gratis 14 días</a>

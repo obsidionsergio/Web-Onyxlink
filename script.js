@@ -56,7 +56,7 @@
       var sameGroup = parent && parent.children.length > 2 &&
         (parent.classList.contains('bento') || parent.classList.contains('pain') ||
          parent.classList.contains('plans') || parent.classList.contains('bonus') ||
-         parent.classList.contains('faq'));
+         parent.classList.contains('faq') || parent.classList.contains('grid3'));
       if (sameGroup) {
         var idx = Array.prototype.indexOf.call(parent.children, el);
         el.style.transitionDelay = Math.min(idx * 60, 320) + 'ms';
@@ -118,6 +118,30 @@
       toggle.setAttribute('aria-expanded', String(open));
       toggle.textContent = open ? 'Ocultar tabla de límites' : 'Ver tabla de límites';
     });
+  }
+
+  /* ---------- Promo marquee: JS-driven so hover eases speed with no jump ---------- */
+  var promo = document.querySelector('.promo');
+  var track = document.querySelector('.promo__track');
+  if (promo && track && !prefersReduced) {
+    var half = track.scrollWidth / 2;
+    var pos = 0, speed = 62, target = 62, last = performance.now();
+    var FAST = 62, SLOW = 16;
+    promo.addEventListener('pointerenter', function () { target = SLOW; });
+    promo.addEventListener('pointerleave', function () { target = FAST; });
+    var loop = function (now) {
+      var dt = Math.min((now - last) / 1000, 0.05);
+      last = now;
+      speed += (target - speed) * 0.05;
+      pos -= speed * dt;
+      if (half > 0 && pos <= -half) pos += half;
+      track.style.transform = 'translateX(' + pos.toFixed(2) + 'px)';
+      requestAnimationFrame(loop);
+    };
+    requestAnimationFrame(loop);
+    var remeasure = function () { half = track.scrollWidth / 2; };
+    window.addEventListener('resize', remeasure, { passive: true });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(remeasure);
   }
 
   /* ---------- Kill background SMIL if reduced motion ---------- */
