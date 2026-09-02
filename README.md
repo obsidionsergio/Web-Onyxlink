@@ -1,6 +1,6 @@
-# Aura — Landing
+# ONYXLINK — Landing
 
-Landing page de venta para **Aura** — bento grid estilo Apple, blanco y negro sobre
+Landing page de venta para **ONYXLINK** — bento grid estilo Apple, blanco y negro sobre
 fondo negro, glows elegantes, animaciones *liquid glass*, tipografía **Unbounded**.
 Estructura de oferta estilo Alex Hormox (dream outcome → mecanismo → value stack →
 planes → garantía → bonus → FAQ → CTA final).
