@@ -83,19 +83,30 @@ section[id]{scroll-margin-top:84px}
   font-size:clamp(26px,3.6vw,44px);
   line-height:1.15;
   letter-spacing:-.02em;
-  max-width:20ch;
+  max-width:none;
   text-wrap:balance;
 }
 .section__lead{
   margin-top:20px;
-  max-width:56ch;
+  max-width:none;
   color:var(--muted);
   font-size:clamp(16px,1.6vw,19px);
+  text-wrap:pretty;
 }
 
+/* Title gradient: white top -> light grey bottom, with a soft bloom */
+.hero__title,.section__title,.final__title{
+  background:linear-gradient(180deg,#ffffff 0%,#ffffff 44%,rgba(255,255,255,.56) 100%);
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 3px 26px rgba(255,255,255,.10));
+}
+
+/* Emphasis word inside the hero title: bright white with a glow */
 .grad{
-  background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.55) 100%);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
+  background:none;
+  -webkit-text-fill-color:#fff;color:#fff;
+  text-shadow:0 0 26px rgba(255,255,255,.45);
 }
 
 /* ---------- Glass primitive ---------- */
@@ -126,7 +137,7 @@ section[id]{scroll-margin-top:84px}
   font-weight:500;
   font-size:14px;
   letter-spacing:.02em;
-  border-radius:999px;
+  border-radius:14px;
   border:1px solid var(--line-2);
   background:rgba(255,255,255,.06);
   color:#fff;
@@ -237,6 +248,16 @@ section[id]{scroll-margin-top:84px}
 .cell p{margin-top:10px;color:var(--muted);font-size:14.5px;line-height:1.55}
 .cell--xl p{font-size:16px;max-width:34ch}
 
+/* top hairline with an edge-fading glow */
+.cell::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:70%;height:1px;pointer-events:none;
+  background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.75) 50%,transparent 100%);
+  box-shadow:0 0 14px 1px rgba(255,255,255,.35);
+  opacity:.65;transition:opacity .5s var(--ease),width .5s var(--ease);
+}
+.cell:hover::before{opacity:1;width:86%}
+
 /* pointer-follow glow */
 .cell__glow{
   position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;
@@ -266,8 +287,9 @@ section[id]{scroll-margin-top:84px}
   margin-top:18px;padding:24px;border-radius:var(--radius-sm);
   background:rgba(255,255,255,.06);border:1px solid var(--line-2);
 }
-.stack__reveal span{font-family:var(--font-display);font-size:15px}
-.stack__price{font-family:var(--font-display);font-weight:600;font-size:clamp(26px,4vw,38px);letter-spacing:-.02em}
+.stack__reveal span{font-family:var(--font-display);font-size:14px}
+.stack__price{font-family:var(--font-display);font-weight:700;font-size:clamp(34px,5vw,52px);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums;display:inline-flex;align-items:baseline;gap:.12em}
+.stack__unit{font-size:.34em;font-weight:500;letter-spacing:0;color:var(--muted)}
 .stack__save{margin-top:20px;color:var(--muted);font-size:15px}
 .stack__save b{color:#fff;font-family:var(--font-display);font-weight:400}
 
@@ -285,12 +307,12 @@ section[id]{scroll-margin-top:84px}
 .plan__badge{
   align-self:flex-start;
   font-family:var(--font-display);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
-  padding:6px 12px;border-radius:999px;background:#fff;color:#000;margin-bottom:16px;
+  padding:6px 12px;border-radius:8px;background:#fff;color:#000;margin-bottom:16px;
 }
 .plan__name{font-family:var(--font-display);font-weight:500;font-size:20px}
 .plan__price{margin-top:14px;display:flex;align-items:baseline;gap:6px}
-.plan__price b{font-family:var(--font-display);font-weight:600;font-size:40px;letter-spacing:-.02em}
-.plan__price span{color:var(--faint);font-size:14px}
+.plan__price b{font-family:var(--font-display);font-weight:700;font-size:54px;line-height:1;letter-spacing:-.03em}
+.plan__price span{color:var(--faint);font-size:13px}
 .plan__for{margin-top:14px;color:var(--muted);font-size:14px;min-height:60px}
 .plan .btn{margin-top:22px}
 .plan__note{margin-top:22px;font-size:12px;color:var(--faint);text-transform:uppercase;letter-spacing:.14em}
@@ -308,7 +330,7 @@ section[id]{scroll-margin-top:84px}
 .limits__toggle{
   font-family:var(--font-display);font-size:12px;letter-spacing:.06em;
   background:rgba(255,255,255,.06);border:1px solid var(--line-2);color:#fff;
-  padding:9px 16px;border-radius:999px;cursor:pointer;transition:background .3s
+  padding:9px 16px;border-radius:12px;cursor:pointer;transition:background .3s
 }
 .limits__toggle:hover{background:rgba(255,255,255,.13)}
 .limits__body{margin-top:22px}
@@ -337,7 +359,7 @@ section[id]{scroll-margin-top:84px}
 .bonus__card{padding:30px}
 .bonus__tag{
   font-family:var(--font-display);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--faint);border:1px solid var(--line);padding:5px 10px;border-radius:999px;
+  color:var(--faint);border:1px solid var(--line);padding:5px 10px;border-radius:8px;
 }
 .bonus__card h3{font-family:var(--font-display);font-weight:500;font-size:17px;margin-top:18px}
 .bonus__card p{margin-top:10px;color:var(--muted);font-size:14.5px}
@@ -382,7 +404,7 @@ section[id]{scroll-margin-top:84px}
 .dock{
   position:fixed;left:16px;right:16px;bottom:16px;z-index:60;
   display:none;align-items:center;justify-content:space-between;gap:14px;
-  padding:14px 18px;border-radius:999px;
+  padding:14px 18px;border-radius:18px;
   background:rgba(255,255,255,.08);border:1px solid var(--line-2);
   backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);
   box-shadow:0 20px 50px -18px rgba(0,0,0,.8);
@@ -390,7 +412,7 @@ section[id]{scroll-margin-top:84px}
 }
 .dock.is-on{transform:translateY(0)}
 .dock span{font-size:12px;color:var(--muted)}
-.dock b{font-family:var(--font-display);font-weight:500;font-size:14px;background:#fff;color:#000;padding:9px 18px;border-radius:999px}
+.dock b{font-family:var(--font-display);font-weight:500;font-size:14px;background:#fff;color:#000;padding:9px 18px;border-radius:12px}
 
 /* ---------- Reveal animation (only when JS is present) ---------- */
 .js [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
