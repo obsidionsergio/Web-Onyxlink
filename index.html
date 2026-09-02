@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aura — Todo tu negocio en una pantalla, con una IA que lo trabaja</title>
+<meta name="description" content="Aura sustituye las 8 herramientas que hoy pagas sueltas —CRM, agenda, chat, web, clon de ventas, voz IA— y las pone a funcionar solas. 14 días gratis, sin tarjeta. Garantía de 30 días." />
+<meta name="theme-color" content="#000000" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Aura — Todo tu negocio en una pantalla" />
+<meta property="og:description" content="Una IA que no ordena tu negocio: lo trabaja. Sustituye 8 herramientas sueltas por una sola pantalla." />
+<meta property="og:locale" content="es_ES" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<!-- ===== Liquid-glass background ===== -->
+<div class="bg" aria-hidden="true">
+  <div class="bg__orbs">
+    <span class="orb orb--1"></span>
+    <span class="orb orb--2"></span>
+    <span class="orb orb--3"></span>
+  </div>
+  <div class="bg__grain"></div>
+  <div class="bg__vignette"></div>
+</div>
+
+<svg width="0" height="0" class="svg-defs" aria-hidden="true">
+  <defs>
+    <filter id="liquid">
+      <feTurbulence type="fractalNoise" baseFrequency="0.009 0.013" numOctaves="2" seed="7" result="noise">
+        <animate class="liquid-anim" attributeName="baseFrequency" dur="26s"
+          values="0.009 0.013; 0.014 0.008; 0.007 0.015; 0.009 0.013" repeatCount="indefinite" />
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="55" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+</svg>
+
+<!-- ===== Sticky nav ===== -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav__brand">
+    <span class="nav__dot"></span> Aura
+  </a>
+  <nav class="nav__links">
+    <a href="#modulos">Producto</a>
+    <a href="#ahorro">Lo que ahorras</a>
+    <a href="#planes">Planes</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a href="#empezar" class="btn btn--sm" data-cta="nav">Empezar gratis</a>
+</header>
+
+<main id="top">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Aura · Sistema operativo con IA para tu negocio</p>
+      <h1 class="hero__title" data-reveal>
+        Tu negocio entero en una pantalla.<br />
+        Y una IA que no lo ordena: <span class="grad">lo trabaja</span>.
+      </h1>
+      <p class="hero__sub" data-reveal>
+        Aura sustituye las 8 herramientas que hoy pagas sueltas —CRM, agenda, chat, web,
+        clon de ventas, voz IA— y las pone a funcionar solas. Tú decides. Ella ejecuta.
+      </p>
+      <div class="hero__cta" data-reveal>
+        <a href="#empezar" class="btn btn--lg" data-cta="hero">Empezar gratis 14 días</a>
+        <a href="#ahorro" class="btn btn--ghost btn--lg">Ver qué reemplazas ↓</a>
+      </div>
+      <p class="hero__micro" data-reveal>
+        Plan Starter completo. Sin tarjeta. Si al final no eliges plan, no se te cobra nada.
+      </p>
+      <div class="hero__trust" data-reveal>
+        <span>Reemplaza a</span>
+        <b>HubSpot</b><i>·</i><b>Calendly</b><i>·</i><b>Slack</b><i>·</i><b>Asana</b><i>·</i><b>Miro</b><i>·</i><b>Kajabi</b><i>·</i><b>tu chatbot</b>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROBLEM ===== -->
+  <section class="section" id="problema">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>El problema</p>
+      <h2 class="section__title" data-reveal>No te falta esfuerzo. Te falta un sitio donde todo pase.</h2>
+      <p class="section__lead" data-reveal>
+        Tienes catorce pestañas abiertas. El lead entró por Instagram, la reserva está en Calendly,
+        el cobro en otro sitio y el seguimiento… en tu cabeza. Cada herramienta suelta te cuesta
+        dinero, tiempo y contexto. Y ninguna, sola, te trae un cliente.
+      </p>
+      <div class="pain">
+        <article class="pain__card glass" data-reveal>
+          <h3>Pagas 8 suscripciones y usas el 20% de cada una</h3>
+          <p>Entre 448 y 843 € al mes repartidos en apps que ni siquiera se hablan entre ellas.</p>
+        </article>
+        <article class="pain__card glass" data-reveal>
+          <h3>El trabajo se queda en «pendiente»</h3>
+          <p>Responder, agendar, hacer seguimiento, redactar. Todo depende de que tú te sientes a hacerlo.</p>
+        </article>
+        <article class="pain__card glass" data-reveal>
+          <h3>Creces a rachas</h3>
+          <p>Un mes a tope, otro en seco. Dependes del boca a boca y de acordarte de dar el paso.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BENTO / MODULES ===== -->
+  <section class="section" id="modulos">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>La solución</p>
+      <h2 class="section__title" data-reveal>Aura: una pantalla, doce módulos, una IA que los mueve.</h2>
+      <p class="section__lead" data-reveal>
+        No es otra app más. Es donde vive tu negocio: ventas, operaciones y equipo en el mismo
+        hilo, con IA integrada en cada parte.
+      </p>
+
+      <div class="bento" id="bento">
+        <article class="cell cell--xl glass" data-reveal>
+          <div class="cell__glow"></div>
+          <span class="cell__icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="5" rx="1.5"/><rect x="13" y="10" width="8" height="11" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/></svg>
+          </span>
+          <h3>Dashboard central</h3>
+          <p>Todo tu negocio, en una pantalla. Ingresos, conversaciones, tareas y equipo sin cambiar de pestaña.</p>
+        </article>
+
+        <article class="cell cell--tall glass" data-reveal>
+          <div class="cell__glow"></div>
+          <span class="cell__icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/><path d="M12 2v2M20 6l-1.5 1.5M4 6l1.5 1.5"/></svg>
+          </span>
+          <h3>Clon de IA</h3>
+          <p>Atiende y vende 24/7. Entrenado con tu forma de vender: responde en tu tono y cierra citas mientras duermes.</p>
+        </article>
+
+        <article class="cell glass" data-reveal>
+          <div class="cell__glow"></div>
+          <span class="cell__icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 0 0-4 4v5a4 4 0 0 0 8 0V7a4 4 0 0 0-4-4Z"/><path d="M5 12a7 7 0 0 0 14 0M12 19v3"/></svg>
+          </span>
+          <h3>Voz IA</h3>
+          <p>Llamadas sin que descuelgues. Coge el teléfono, filtra y agenda por ti.</p>
+        </article>
+
+        <article class="cell glass" data-reveal>
+          <div class="cell__glow"></div>
+          <span class="cell__icon">
+            <svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h10"/><circle cx="19" cy="19" r="2"/></svg>
+          </span>
+          <h3>Asistente interno</h3>
+          <p>Redacta, resume y ejecuta tareas internas por ti, cada día.</p>
+        </article>
+
+        <article class="cell cell--wide glass" data-reveal>
+          <div class="cell__glow"></div>
+          <span class="cell__icon">
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+          </span>
+          <h3>Conversaciones</h3>
+          <p>Web, WhatsApp, Instagram y email en un hilo. Todo lo que te escriben, en un único sitio con contexto.</p>
+        </article>
+
+        <article class="cell glass" data-reveal>
+          <div class="cell__glow"></div>
+          <span class="cell__icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><circle cx="12" cy="15" r="2"/></svg>
+          </span>
+          <h3>Agenda</h3>
+          <p>La gente reserva sola. Enlazada al clon, a la voz IA y a tu calendario real.</p>
+        </article>
+
+        <article class="cell glass" data-reveal>
+          <div class="cell__glow"></div>
+          <span class="cell__icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9h4M7 13h7M17 8v6"/></svg>
+          </span>
+          <h3>Pizarra</h3>
+          <p>Planifica en tiempo real. Mapas, diagramas y lluvias de ideas con tu equipo.</p>
+        </article>
+
+        <article class="cell cell--wide glass" data-reveal>
+          <div class="cell__glow"></div>
+          <span class="cell__icon">
+            <svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 16v-4M12 16V8M16 16v-6"/></svg>
+          </span>
+          <h3>CRM y oportunidades</h3>
+          <p>Pipeline y contactos al día. El clon actualiza el estado de cada trato sin que toques nada.</p>
+        </article>
+
+        <article class="cell glass" data-reveal>
+          <div class="cell__glow"></div>
+          <span class="cell__icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 4v16M8 9h13M8 14h13"/></svg>
+          </span>
+          <h3>Proyectos y tareas</h3>
+          <p>Tableros, hitos, fechas. Lo que hay que hacer y quién lo tiene.</p>
+        </article>
+
+        <article class="cell glass" data-reveal>
+          <div class="cell__glow"></div>
+          <span class="cell__icon">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2Z"/></svg>
+          </span>
+          <h3>Chat de equipo</h3>
+          <p>Sin salir de la plataforma. Cada mensaje junto al cliente, la tarea y el proyecto del que habla.</p>
+        </article>
+
+        <article class="cell cell--wide glass" data-reveal>
+          <div class="cell__glow"></div>
+          <span class="cell__icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="5" width="15" height="12" rx="2"/><path d="M17 9l5-3v12l-5-3"/></svg>
+          </span>
+          <h3>Oficina virtual</h3>
+          <p>Reuniones y presencia en directo. Quién está, en qué, y una sala abierta cuando hace falta.</p>
+        </article>
+
+        <article class="cell cell--wide glass" data-reveal>
+          <div class="cell__glow"></div>
+          <span class="cell__icon">
+            <svg viewBox="0 0 24 24"><path d="M3 7h18v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M3 7l3-4h12l3 4M9 12h6"/></svg>
+          </span>
+          <h3>Web, cursos y pagos</h3>
+          <p>Vende y cobra, todo integrado. Tu web, tus productos y tu checkout sin montar tres servicios más.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VALUE STACK ===== -->
+  <section class="section" id="ahorro">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Lo que dejas de pagar</p>
+      <h2 class="section__title" data-reveal>Suma lo que ya pagas. Ahora réstalo.</h2>
+      <p class="section__lead" data-reveal>Estos son los precios de mercado de lo que Aura hace dentro. Sin cambiar de pestaña.</p>
+
+      <div class="stack glass" data-reveal>
+        <ul class="stack__list">
+          <li><span>CRM <em>(tipo HubSpot / Pipedrive)</em></span><b>50–90 €/mes</b></li>
+          <li><span>Gestor de tareas <em>(tipo Asana / ClickUp)</em></span><b>25–30 €/mes</b></li>
+          <li><span>Chat de equipo <em>(tipo Slack)</em></span><b>15 €/mes</b></li>
+          <li><span>Agenda de reservas <em>(tipo Calendly)</em></span><b>12 €/mes</b></li>
+          <li><span>Pizarra colaborativa <em>(tipo Miro)</em></span><b>16 €/mes</b></li>
+          <li><span>Chatbot / clon de IA para ventas</span><b>100–200 €/mes</b></li>
+          <li><span>Asistente de voz con IA</span><b>150–300 €/mes</b></li>
+          <li><span>Web + cursos + cobros <em>(tipo Kajabi)</em></span><b>80–150 €/mes</b></li>
+        </ul>
+        <div class="stack__total">
+          <span>Total pagando suelto</span>
+          <b class="strike">448–843 €/mes</b>
+        </div>
+        <div class="stack__reveal">
+          <span>Todo eso, dentro de <b>Aura Pro</b></span>
+          <b class="stack__price"><span class="count" data-to="159">159</span> €/mes</b>
+        </div>
+        <p class="stack__save">
+          Te ahorras entre <b>289 €</b> y <b>684 €</b> cada mes. Y además, funciona solo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PLANS ===== -->
+  <section class="section" id="planes">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Planes</p>
+      <h2 class="section__title" data-reveal>Elige cuánto quieres que trabaje la IA por ti.</h2>
+      <p class="section__lead" data-reveal>Mismo producto en los tres. Lo que cambia es cuánto puedes exprimirlo.</p>
+
+      <div class="plans">
+        <article class="plan glass" data-reveal>
+          <h3 class="plan__name">Starter</h3>
+          <p class="plan__price"><b>79 €</b><span>/mes</span></p>
+          <p class="plan__for">Para arrancar y quitarte de encima las primeras cinco herramientas sueltas.</p>
+          <a href="#empezar" class="btn btn--block" data-cta="plan-starter">Empezar gratis</a>
+          <ul class="plan__list">
+            <li>Dashboard, CRM, agenda, pizarra, proyectos y chat de equipo</li>
+            <li>Clon de IA y voz IA con cuota mensual</li>
+            <li>Web y checkout para tus primeros productos</li>
+            <li>Hasta 3 personas en el equipo</li>
+          </ul>
+        </article>
+
+        <article class="plan plan--featured glass" data-reveal>
+          <span class="plan__badge">Más elegido</span>
+          <h3 class="plan__name">Pro</h3>
+          <p class="plan__price"><b>159 €</b><span>/mes</span></p>
+          <p class="plan__for">Cuando ya tienes clientes a diario y quieres que la IA trabaje contigo, no solo que lo ordene.</p>
+          <a href="#empezar" class="btn btn--block btn--solid" data-cta="plan-pro">Empezar gratis 14 días</a>
+          <p class="plan__note">Todo lo de Starter, más:</p>
+          <ul class="plan__list">
+            <li>Más del doble de respuestas del clon y minutos de voz</li>
+            <li>5× más automatizaciones activas</li>
+            <li>Reuniones de hasta 50 personas, con transcripción</li>
+            <li>Hasta 10 personas en el equipo</li>
+          </ul>
+        </article>
+
+        <article class="plan glass" data-reveal>
+          <h3 class="plan__name">Scale</h3>
+          <p class="plan__price"><b>329 €</b><span>/mes</span></p>
+          <p class="plan__for">Para equipos grandes, alto volumen y cero límites operativos.</p>
+          <a href="#empezar" class="btn btn--block" data-cta="plan-scale">Hablar con ventas</a>
+          <p class="plan__note">Todo lo de Pro, más:</p>
+          <ul class="plan__list">
+            <li>Equipo sin límite de personas</li>
+            <li>CRM, proyectos y automatizaciones sin límite</li>
+            <li>Directos para hasta 1.500 espectadores</li>
+            <li>Soporte prioritario y onboarding 1:1</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="limits glass" data-reveal>
+        <div class="limits__head">
+          <h3>Hasta dónde llega cada plan</h3>
+          <button class="limits__toggle" type="button" aria-expanded="false" aria-controls="limits-table">Ver tabla de límites</button>
+        </div>
+        <div class="limits__body" id="limits-table" hidden>
+          <div class="limits__scroll">
+            <table>
+              <thead>
+                <tr><th>Categoría</th><th>Starter</th><th>Pro</th><th>Scale</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Respuestas del clon / mes</td><td>500</td><td>1.500</td><td>4.000</td></tr>
+                <tr><td>Minutos de voz IA / mes</td><td>60</td><td>300</td><td>900</td></tr>
+                <tr><td>Tareas del asistente / mes</td><td>200</td><td>800</td><td>2.500</td></tr>
+                <tr><td>Contactos en el CRM</td><td>2.000</td><td>8.000</td><td>30.000</td></tr>
+                <tr><td>Personas en el equipo</td><td>3</td><td>10</td><td>Sin límite</td></tr>
+                <tr><td>Proyectos activos</td><td>10</td><td>50</td><td>Sin límite</td></tr>
+                <tr><td>Pizarras y diagramas</td><td>5</td><td>25</td><td>Sin límite</td></tr>
+                <tr><td>Automatizaciones activas</td><td>10</td><td>50</td><td>Sin límite</td></tr>
+                <tr><td>Cursos y productos a la venta</td><td>Sin límite</td><td>Sin límite</td><td>Sin límite</td></tr>
+                <tr><td>Personas por reunión</td><td>15</td><td>50</td><td>100</td></tr>
+                <tr><td>Espectadores en directo</td><td>30</td><td>300</td><td>1.500</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GUARANTEE ===== -->
+  <section class="section" id="garantia">
+    <div class="wrap">
+      <div class="guarantee glass" data-reveal>
+        <div class="guarantee__seal">30<span>días</span></div>
+        <div>
+          <p class="eyebrow">Garantía sin excusas</p>
+          <h2 class="section__title">Sustituye 3 herramientas en 30 días. O te devolvemos el 100%.</h2>
+          <p class="section__lead">
+            Si en 30 días no has dado de baja al menos 3 de las apps que usas hoy porque Aura ya
+            hace su trabajo, nos escribes y te devolvemos todo lo pagado. Sin preguntas, sin letra
+            pequeña. El riesgo lo ponemos nosotros.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAST-ACTION BONUSES ===== -->
+  <section class="section" id="bonus">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Si entras ahora</p>
+      <h2 class="section__title" data-reveal>Tres cosas que no van a estar siempre.</h2>
+      <div class="bonus">
+        <article class="bonus__card glass" data-reveal>
+          <span class="bonus__tag">Incluido</span>
+          <h3>Puesta en marcha guiada 1:1</h3>
+          <p>Alguien del equipo te deja el dashboard, el CRM y el clon listos para tu negocio.</p>
+        </article>
+        <article class="bonus__card glass" data-reveal>
+          <span class="bonus__tag">Incluido</span>
+          <h3>Migración asistida de tus datos</h3>
+          <p>Traemos tus contactos, tu agenda y tus productos desde donde los tengas hoy.</p>
+        </article>
+        <article class="bonus__card glass" data-reveal>
+          <span class="bonus__tag">Fundadores</span>
+          <h3>Precio de fundador bloqueado</h3>
+          <p>El precio con el que entras no sube mientras sigas suscrito.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section" id="faq">
+    <div class="wrap wrap--narrow">
+      <p class="eyebrow" data-reveal>Antes de que preguntes</p>
+      <h2 class="section__title" data-reveal>Lo que la gente quiere saber.</h2>
+
+      <div class="faq" data-reveal>
+        <details>
+          <summary>¿Es otra herramienta que tengo que aprender?</summary>
+          <p>Es la que hace que borres siete. La curva es de días, no de semanas, y la puesta en marcha la hacemos contigo en la primera llamada.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa con mis datos actuales?</summary>
+          <p>Los migramos nosotros: contactos, agenda, productos y conversaciones. No empiezas de cero.</p>
+        </details>
+        <details>
+          <summary>¿El clon de IA suena a robot?</summary>
+          <p>Se entrena con tu forma de vender y tus textos. Responde en tu tono en web, WhatsApp, Instagram y email, desde el mismo hilo.</p>
+        </details>
+        <details>
+          <summary>¿Y si no lo uso lo suficiente?</summary>
+          <p>Empiezas gratis 14 días con el plan Starter completo y sin tarjeta. Si al final no eliges plan, no se te cobra nada.</p>
+        </details>
+        <details>
+          <summary>¿Puedo cambiar de plan?</summary>
+          <p>Sí, subes o bajas cuando quieras. El producto es el mismo en los tres; lo único que cambian son los límites.</p>
+        </details>
+        <details>
+          <summary>¿Y si somos un equipo?</summary>
+          <p>Starter hasta 3 personas, Pro hasta 10, Scale sin límite. Chat, proyectos y oficina virtual van dentro, sin pagar aparte.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="section final" id="empezar">
+    <div class="wrap wrap--narrow" data-reveal>
+      <h2 class="final__title">Deja de administrar tu negocio.<br />Empieza a moverlo.</h2>
+      <p class="final__sub">14 días gratis. Sin tarjeta. Y una garantía que pone el dinero de nuestro lado.</p>
+      <a href="#empezar" class="btn btn--lg btn--solid" data-cta="final">Empezar gratis 14 días</a>
+      <p class="hero__micro">El plan Starter completo. Si al final no eliges plan, no se te cobra nada.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__row">
+    <span class="nav__brand"><span class="nav__dot"></span> Aura</span>
+    <nav class="foot__links">
+      <a href="#modulos">Producto</a>
+      <a href="#planes">Planes</a>
+      <a href="#garantia">Garantía</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <span class="foot__copy">© 2026 Aura. Todo tu negocio en una pantalla.</span>
+  </div>
+</footer>
+
+<a href="#empezar" class="dock" id="dock" data-cta="dock">
+  <span>14 días gratis · sin tarjeta</span>
+  <b>Empezar</b>
+</a>
+
+<script src="script.js" defer></script>
+</body>
+</html>
